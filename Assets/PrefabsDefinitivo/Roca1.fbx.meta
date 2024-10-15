@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Checkerr
-    second: {fileID: 2100000, guid: f1545e5be358c284ea31158fa3c0fa5f, type: 2}
+    second: {fileID: 2100000, guid: 67a15709599947e458057ebb598b7258, type: 2}
   materials:
     materialImportMode: 1
     materialName: 3
