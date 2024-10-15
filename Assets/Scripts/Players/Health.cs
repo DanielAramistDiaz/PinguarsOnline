@@ -24,10 +24,16 @@ public class Health : MonoBehaviour
     public float respawnTime = 5f;
     public GameObject[] disable;
     public Movement movement;
+    public bool hasDie;
 
     [PunRPC]
     public void TakeDamage(int _damage)
     {
+        if (hasDie)
+        {
+            return;
+        }
+
         health -= _damage;
 
         healthText.text = health.ToString();
@@ -36,7 +42,7 @@ public class Health : MonoBehaviour
         {
             if (isLocalPlayer)
             {
-            
+                
             /*if (isLocalPlayer)
             {
                 RoomManager.instance.SpawnPlayer();
@@ -54,6 +60,7 @@ public class Health : MonoBehaviour
 
                 for (int i = 0; i < disable.Length; i++)
                 {
+                    
                     disable[i].SetActive(false);
                 }
 
@@ -70,17 +77,18 @@ public class Health : MonoBehaviour
 
     public void Respawn()
     {
+        
         for (int i = 0; i < disable.Length; i++)
         {
+            
             disable[i].SetActive(true);
         }
-
+        
         movement.enabled = true;
 
         if (isLocalPlayer)
         {
-            
-
+            hasDie = false;
             weaponSwitcher.DropWeapon();
             RoomManager.instance.deaths++;
             Transform spawnPoint = RoomManager.instance.spawnPoints[0];
@@ -88,7 +96,7 @@ public class Health : MonoBehaviour
             health = 100;
             healthText.text = health.ToString();
             gameObject.SetActive(true);
-            RoomManager.instance.SetHashes();
+            RoomManager.instance.SetHashes();            
         }
     }
 
@@ -117,6 +125,7 @@ public class Health : MonoBehaviour
     [ContextMenu("Respawn")]
     void CallRespawn()
     {
+        
         Respawn();
     }
 

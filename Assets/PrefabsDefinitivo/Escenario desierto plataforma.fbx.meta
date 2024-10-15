@@ -53,102 +53,102 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: DiamondPlate008C_1K-PNG_Color
-    second: {fileID: 2800000, guid: 94ecb8d4e330ea34ab570f9c69f29c7a, type: 3}
+    second: {fileID: 2800000, guid: a9257c89b522d9b49a61be6e4a4a70cb, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: DiamondPlate008C_1K-PNG_Metalness
-    second: {fileID: 2800000, guid: e313a05455eff534da6ea799b72615e4, type: 3}
+    second: {fileID: 2800000, guid: bd6eee6e0ca543b43b0fbdcd14a11a7c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: DiamondPlate008C_1K-PNG_NormalGL
-    second: {fileID: 2800000, guid: d8903dc38d661a847b816fb79b02f593, type: 3}
+    second: {fileID: 2800000, guid: 841718c4d25432742be3e07625957d43, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: DiamondPlate008C_1K-PNG_Roughness
-    second: {fileID: 2800000, guid: 39e073a5aae80cd4aa2fb0cc495af212, type: 3}
+    second: {fileID: 2800000, guid: 6c75527953d5f8549997d300e960a81a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Metal018_1K-PNG_Color
-    second: {fileID: 2800000, guid: 1edfef1b2f5ba8243b410992d76b1154, type: 3}
+    second: {fileID: 2800000, guid: 6a6366d171782354ea8d78d6bf9f34b2, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Metal018_1K-PNG_Metalness
-    second: {fileID: 2800000, guid: d8f617f31d8518844bce370dee8d084e, type: 3}
+    second: {fileID: 2800000, guid: c26b33a9613097d4189589ccddd61560, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Metal018_1K-PNG_NormalGL
-    second: {fileID: 2800000, guid: a46fb86eafc773a4db43f53774ba4cbe, type: 3}
+    second: {fileID: 2800000, guid: dbdc1141f1ef3f546bd5d7cb739cd84a, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Metal018_1K-PNG_Roughness
-    second: {fileID: 2800000, guid: d52a84425219f1d4eb991297db5aa29a, type: 3}
+    second: {fileID: 2800000, guid: c8a8c38796f7efd4a9f05cc45758c91f, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Metal053A_1K-PNG_Color
-    second: {fileID: 2800000, guid: ee5a5da439cf61b4a8f6b5b540dbd04e, type: 3}
+    second: {fileID: 2800000, guid: 0af5902d593cf284a8112c73e3ccc005, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Metal053A_1K-PNG_Metalness
-    second: {fileID: 2800000, guid: fb220d6dcb1b9eb409a783e4a7183ccc, type: 3}
+    second: {fileID: 2800000, guid: e7169b0410421034bb03edae08df9290, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Metal053A_1K-PNG_NormalGL
-    second: {fileID: 2800000, guid: b7f394c9b929d7f4eb269820f69bb3e5, type: 3}
+    second: {fileID: 2800000, guid: 4ed4d0d2abd83cf40bf0d6d5e88b9be7, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Metal053A_1K-PNG_Roughness
-    second: {fileID: 2800000, guid: 200d624a41c7a1245971c38e42d3d06c, type: 3}
+    second: {fileID: 2800000, guid: 8e6c8f3fb3176a84cb53a98e9f630088, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: PaintedMetal004_1K-PNG_Color
-    second: {fileID: 2800000, guid: 8253944379990bf4da504b14e13242b1, type: 3}
+    second: {fileID: 2800000, guid: c23c8b549f618404999093a2b12e1ee3, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: PaintedMetal004_1K-PNG_Metalness
-    second: {fileID: 2800000, guid: eda9cb220a6f1004db2cb0c7eb3be12d, type: 3}
+    second: {fileID: 2800000, guid: 7d9b509eeb9bae84293a1531a85db8fe, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: PaintedMetal004_1K-PNG_NormalGL
-    second: {fileID: 2800000, guid: ee4532dbc9c330e4bb0a30405af9fff1, type: 3}
+    second: {fileID: 2800000, guid: 79e0857875be3e44992bfbd759489609, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: PaintedMetal007_1K-PNG_Color
-    second: {fileID: 2800000, guid: a63a657506e77f44588c8b381fe010b3, type: 3}
+    second: {fileID: 2800000, guid: e1466f8c5706afc4fa3bd58a251cab2c, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: PaintedMetal007_1K-PNG_Metalness
-    second: {fileID: 2800000, guid: bb395c2e78bd4874db031bbc32d29afd, type: 3}
+    second: {fileID: 2800000, guid: 30513251f8f532a469cbcbea6790f669, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: PaintedMetal007_1K-PNG_NormalGL
-    second: {fileID: 2800000, guid: c6207f0162aa13f40a9aa5b40e3d19c4, type: 3}
+    second: {fileID: 2800000, guid: cc00ffb28e9177841a3815852d839227, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: PaintedMetal007_1K-PNG_Roughness
-    second: {fileID: 2800000, guid: 8c2f6690906364945a8b09accb02a651, type: 3}
+    second: {fileID: 2800000, guid: 4bcd827c752792d4b83819ade0d398a2, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: playground_sand_diff_4k
-    second: {fileID: 2800000, guid: 94871cceb7e9eb448a2452e25f784bcf, type: 3}
+    second: {fileID: 2800000, guid: 87cc7f418868a4a44be95975f9e00c79, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

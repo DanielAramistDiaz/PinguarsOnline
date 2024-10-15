@@ -692,6 +692,7 @@ MonoBehaviour:
   - {fileID: 2912389690299554883}
   - {fileID: 2603674207928795090}
   movement: {fileID: 7779188969168675652}
+  hasDie: 0
 --- !u!1 &4189013885038199927
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,7 +845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1829663001364861049
 Transform:
   m_ObjectHideFlags: 0
