@@ -88,6 +88,44 @@ public class PlayerSetup : MonoBehaviour
 
             
         }
+
+        if (other.tag == "MasDanio")
+        {
+            
+            currentWeapon.GetComponent<Weapon>().damage++;
+            currentWeapon.GetComponent<Weapon>().UpdateHud();
+            other.gameObject.SetActive(false);
+        }
+
+        if (other.tag == "MasVeloAr")
+        {            
+            currentWeapon.GetComponent<Weapon>().fireRate++;
+            currentWeapon.GetComponent<Weapon>().UpdateHud();
+            other.gameObject.SetActive(false);
+        }
+
+        if (other.tag == "MasCura")
+        {
+            GetComponent<Health>().cureRate++;
+            other.gameObject.SetActive(false);
+        }
+
+        if (other.tag == "MasRapidez")
+        {
+            float oldWalkSpeed = GetComponent<Movement>().walkSpeed;
+            float oldSprintSpeed = GetComponent<Movement>().sprintSpeed;
+
+            //float newWalkSpeed = oldWalkSpeed * 0.1f + oldWalkSpeed;
+            //float newSprintSpeed = oldSprintSpeed * 0.1f + oldSprintSpeed;
+
+            float newWalkSpeed = oldWalkSpeed +2;
+            float newSprintSpeed = oldSprintSpeed +2;
+
+            GetComponent<Movement>().walkSpeed = newWalkSpeed;
+            GetComponent<Movement>().sprintSpeed = newSprintSpeed;
+
+            other.gameObject.SetActive(false);
+        }
     }
 
     public void IsLocalPlayer()

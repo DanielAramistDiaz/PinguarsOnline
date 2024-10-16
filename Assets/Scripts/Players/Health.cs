@@ -91,7 +91,7 @@ public class Health : MonoBehaviour
             hasDie = false;
             weaponSwitcher.DropWeapon();
             RoomManager.instance.deaths++;
-            Transform spawnPoint = RoomManager.instance.spawnPoints[0];
+            Transform spawnPoint = RoomManager.instance.spawnPoints[Random.Range(0, RoomManager.instance.spawnPoints.Length)];
             transform.position = spawnPoint.position;
             health = 100;
             healthText.text = health.ToString();

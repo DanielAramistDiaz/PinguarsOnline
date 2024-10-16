@@ -6,6 +6,13 @@ TagManager:
   tags:
   - GrabbableWeapon
   - Ammo
+  - MasDanio
+  - MasVeloAr
+  - MasCura
+  - MasRapidez
+  - Ice
+  - Metal
+  - Grass
   layers:
   - Default
   - TransparentFX

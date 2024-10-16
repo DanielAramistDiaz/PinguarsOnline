@@ -19,16 +19,44 @@ public class Movement : MonoBehaviour
     private bool sprinting;
     private bool jumping;
 
-    private bool grounded = false;
+    public bool grounded = false;
 
     [Space]
     public GameObject camerasGO;
     public float inclinacionH;
     public float multiplicador;
 
+    [Space]
+
+    public bool isMetal;
+    public bool isGrass;
+    public bool isConcrete;
+    public bool isOther;
+
+    public AudioClip[] footStepsMetal;
+    public AudioClip[] footStepsGrass;
+    public AudioClip[] footStepsConcrete;
+    public AudioClip[] footStepsOther;
+
+    private AudioSource m_AudioSource;
+
+    public GameObject pisando;
+    public Vector3 posicionLaser;
+
+    public enum CurrentFootStep
+    {
+        Metal,
+        Grass,
+        Concrete,
+        Other
+    }
+
+    public CurrentFootStep footStepSound;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        m_AudioSource = GetComponent<AudioSource>();
     }
 
 
@@ -90,6 +118,80 @@ public class Movement : MonoBehaviour
         }
 
         grounded = false;
+
+        //cosas lasericas
+
+        // Esta cosa sirve para que el rasho laser ignore cosas en una capa
+        int layerMask = 1 << 2;
+
+        /* La ~ esta wea que se saca con el coso derecho del espacio y pulsando el asterisco debajo del interrogador invertido
+        sirve para invertir la operación, es decir que ahora solo detecta la capa 3*/
+        layerMask = ~layerMask;
+
+        RaycastHit hit;
+
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1.1f, layerMask))
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
+            pisando = hit.collider.gameObject;
+            posicionLaser = hit.point;
+            //Debug.Log("Le pego a algo");
+
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 1, Color.red);
+            pisando = this.gameObject;
+            //Debug.Log("Le di al puro aire");
+
+        }
+
+        switch (pisando.gameObject.tag)
+        {
+            case "Metal":
+                isMetal = true;
+                isGrass = false;
+                isConcrete = false;
+                isOther = false;
+
+                footStepSound = CurrentFootStep.Metal;
+                break;
+
+            case "Grass":
+                isGrass = true;
+                isMetal = false;
+                isConcrete = false;
+                isOther = false;
+
+                footStepSound = CurrentFootStep.Grass;
+                break;
+
+            case "Concrete":
+                isMetal = false;
+                isGrass = false;
+                isConcrete = true;
+                isOther = false;
+
+                footStepSound = CurrentFootStep.Concrete;
+                break;
+
+            
+
+            default:
+                isOther = true;
+                isMetal = false;
+                isGrass = false;
+                isConcrete = false;
+
+                footStepSound = CurrentFootStep.Other;
+                break;
+        }
+
+
+        PlayFootStepAudio();
+        
+        
     }
 
     Vector3 CalculateMovement (float _speed)
@@ -103,6 +205,7 @@ public class Movement : MonoBehaviour
 
         if (input.magnitude > 0.5f)
         {
+            
             Vector3 velocityChange = targetVelocity - velocity;
 
             velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelChange, maxVelChange);
@@ -117,5 +220,73 @@ public class Movement : MonoBehaviour
         {
             return new Vector3();
         }
+    }
+
+    private void PlayFootStepAudio()
+    {
+        if (grounded = true && rb.velocity.magnitude > 0.1f && !m_AudioSource.isPlaying)
+        {
+            // pick & play a random footstep sound from the array,
+            // excluding sound at index 0
+            int n = Random.Range(1, 2);
+
+
+            switch (footStepSound)
+            {
+                case CurrentFootStep.Metal:
+                    m_AudioSource.clip = footStepsMetal[n];
+                    Debug.Log("sonido");
+                    break;
+
+                case CurrentFootStep.Grass:
+                    m_AudioSource.clip = footStepsGrass[n];
+                    break;
+
+                case CurrentFootStep.Concrete:
+                    m_AudioSource.clip = footStepsConcrete[n];
+                    break;
+
+                case CurrentFootStep.Other:
+                    m_AudioSource.clip = footStepsOther[n];
+                    break;
+
+            }
+
+
+
+
+            //m_AudioSource.PlayOneShot(m_AudioSource.clip);
+            // move picked sound to index 0 so it's not picked next time
+
+
+            switch (footStepSound)
+            {
+                case CurrentFootStep.Metal:
+                    footStepsMetal[n] = footStepsMetal[0];
+                    footStepsMetal[0] = m_AudioSource.clip;
+                    break;
+
+                case CurrentFootStep.Grass:
+                    footStepsGrass[n] = footStepsGrass[0];
+                    footStepsGrass[0] = m_AudioSource.clip;
+                    break;
+
+                case CurrentFootStep.Concrete:
+                    footStepsConcrete[n] = footStepsConcrete[0];
+                    footStepsConcrete[0] = m_AudioSource.clip;
+                    break;
+
+                case CurrentFootStep.Other:
+                    footStepsOther[n] = footStepsOther[0];
+                    footStepsOther[0] = m_AudioSource.clip;
+                    break;
+
+            }
+
+            m_AudioSource.PlayOneShot(m_AudioSource.clip);
+            return;
+        }
+
+
     }
 }

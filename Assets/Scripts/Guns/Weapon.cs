@@ -15,6 +15,7 @@ public class Weapon : MonoBehaviour
     public float range = 100f;
     public GameObject[] weaponMesh;
     public bool isInHand;
+    public AudioSource audioExit;
 
     [Header("VFX")]
 
@@ -158,6 +159,9 @@ public class Weapon : MonoBehaviour
     }
     void Fire()
     {
+
+        audioExit.Play();
+
         recoiling = true;
         recovering = false;
 
